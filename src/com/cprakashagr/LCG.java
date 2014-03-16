@@ -29,7 +29,7 @@ public class LCG {
 		
 		double lastNum;
 		
-		lastNum= last==0?seed:last;
+		lastNum = last==0?seed:last;
 		lastNum = start + (((a*lastNum + c)%m)%m)%end;
 		
 		return lastNum;
