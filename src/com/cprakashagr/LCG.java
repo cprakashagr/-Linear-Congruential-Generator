@@ -1,5 +1,12 @@
+/**
+ * 
+ */
 package com.cprakashagr;
 
+/**
+ * @author Chandra Prakash
+ *
+ */
 public class LCG {
 
 	double seed;
@@ -9,7 +16,6 @@ public class LCG {
 	
 	public LCG() {
 		// TODO Auto-generated constructor stub
-		
 		seed	= Math.PI;
 		a		= 65537;
 		c		= 26493;
@@ -17,7 +23,7 @@ public class LCG {
 		myRandom();
 	}
 	
-	public double myRandom() {
+	public void myRandom() {
 		
 		int i=0;
 		double lastNum = seed;
@@ -25,11 +31,13 @@ public class LCG {
 			lastNum = ((a*lastNum + c)%m)%m;
 			System.out.println(lastNum);
 		}
-		
-		return 0;
 	}
-	
+
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		
 		new LCG();
 	}
