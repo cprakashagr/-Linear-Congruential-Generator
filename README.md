@@ -1,5 +1,5 @@
--Linear-Congruential-Generator
-==============================
+Linear Congruential Generator (LCG)
+===================================
 
 Linear Congruential Generator
 
