@@ -15,15 +15,15 @@ public class LCG {
 		// TODO Auto-generated constructor stub
 		seed	= Math.PI;	//Starting Number
 		a		= 65537;	//Multiplier
-		c		= 26493;	//Increment
-		m		= 16*4;		//Modulus
+		c		= 12493;	//Increment
+		m		= 2*80;		//Modulus
 		
 		/*
 		 * Conditions (Not necessary, but important if LCG is considered.): 
 		 * 1. if m is divisible by 4, then a-1 is also divisible by 4.
 		 */
 //		generateRandom();
-//		uniformityCheck();
+		uniformityCheck();
 	}
 	
 	public double myRandom(int start, int end, double last) {
