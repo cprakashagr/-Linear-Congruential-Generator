@@ -10,6 +10,7 @@ public class LCG {
 	int a;
 	int c;
 	int m;
+	static double lastLCG=0;
 	
 	public LCG() {
 		// TODO Auto-generated constructor stub
@@ -21,17 +22,20 @@ public class LCG {
 		/*
 		 * Conditions (Not necessary, but important if LCG is considered.): 
 		 * 1. if m is divisible by 4, then a-1 is also divisible by 4.
+		 * 2. c and m are relatively co-prime numbers.
 		 */
 //		generateRandom();
 		uniformityCheck();
 	}
 	
-	public double myRandom(int start, int end, double last) {
+	public double myRandom(int start, int end) {
 		
 		double lastNum;
 		
-		lastNum = last==0?seed:last;
+		lastNum = lastLCG==0?seed:lastLCG;
 		lastNum = start + (((a*lastNum + c)%m)%m)%end;
+		
+		lastLCG = lastNum;
 		
 		return lastNum;
 	}
@@ -48,7 +52,7 @@ public class LCG {
 		
 		// Iterations: 100
 		for (i=0;i<100;i++) {
-			last = myRandom(0, 10, last);
+			last = myRandom(0, 10);
 			int intLast = (int) last;
 			
 			if (ranNum[intLast] > 0)
@@ -56,7 +60,7 @@ public class LCG {
 			else
 				ranNum[intLast] = 1;
 			
-			//System.out.println(last + " - " + intLast + " - " + ranNum[intLast]);
+//			/System.out.println(last + " - " + intLast + " - " + ranNum[intLast]);
 		}
 		
 		for (i=0;i<10;i++)
@@ -69,7 +73,7 @@ public class LCG {
 		double last = 0;
 		
 		for (i=0;i<100;i++) {
-			last = myRandom(0,100,last);
+			last = myRandom(0,100);
 			System.out.println(last);
 		}
 	}
